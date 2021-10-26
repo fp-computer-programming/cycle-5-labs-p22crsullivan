@@ -2,14 +2,21 @@
 import math
 import time
 
-seconds0 = time.process_time
-print(math.pow(2, 2))
-seconds1 = time.process_time
-speed = seconds1 - seconds0
-print(speed)
-
-seconds2 = time.process_time
+time_period = time.process_time()
 print(2 ** 2)
-seconds3 = time.process_time
-speed2 = seconds3 - seconds2
-print(speed2)
+
+time_period2 = time.process_time()
+print(math.pow(2, 2))
+
+finaltime = time_period2 - time_period
+print(finaltime)
+
+time_period3 = time.perf_counter()
+print(2 ** 2)
+
+time_period4 = time.perf_counter()
+print(math.pow(2, 2))
+
+finaltime2 = time_period - time_period3
+
+print(finaltime2)
